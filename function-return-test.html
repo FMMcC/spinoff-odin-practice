@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Maths with one number</title>
+  <style>
+    input {
+      font-size: 2em;
+      margin: 10px 1px 0;
+    }
+  </style>
+  </head>
+<body>
+<h1>What does this number do?</h1>
+  <input class="numberInput" type="text">
+</br>
+</br>
+
+  <button id="calcSqR">Find square root</button>
+  <button id="calcCircumference">Find the circumference of a circle with this radius</button>
+  <p></p>
+  <script>
+    const input = document.querySelector('.numberInput');
+    const para = document.querySelector('p');
+    const sqRBtn= document.getElementById("calcSqR");
+    const circBtn = document.getElementById("calcCircumference");
+
+    function circumference(num){
+        return 2 * Math.PI * num
+    };
+
+    function squareRoot(num){
+        return Math.sqrt(num)
+    };
+
+    circBtn.addEventListener("click", () =>{
+        const num = parseFloat(input.value);
+        if (isNaN(num)){
+            "Input must be a number"
+        } else {
+            para.textContent = `If the radius of a circle is ${num}, then the circumference will be approximately ${circumference(num)}.`
+        }
+    }
+);
+
+    sqRBtn.addEventListener("click", ()=> {
+        const num = parseFloat(input.value);
+        if (isNaN(num)){
+            para.textContent = "Not a number - please try again!"
+        } else {
+            para.textContent = `Square root of ${num} is ${squareRoot(num)}`
+        }
+    }
+);
+
+  </script>
+  <cite>
+    Based on the <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Return_values#active_learning_our_own_return_value_function"> 'return values' MDN tutorial</a>.
+</cite>
+</body>
+</html>

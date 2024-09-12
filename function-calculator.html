@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Maths! With 2 numbers</title>
+    </head>
+    <body>
+        <h1 id="questionHeader">Enter your numbers</h1>
+        <input type="number" id="no1">
+        <input type="number" id="no2">
+        <button id="addBtn">Add</button>
+        <button id="multiBtn">Multiply</button>
+        <p id="demo"></p>
+
+        <script>
+
+            const para = document.querySelector('p');
+
+            const addBtn = document.getElementById("addBtn");
+            addBtn.addEventListener("click",add);
+            
+            const multiBtn = document.getElementById("multiBtn");
+            multiBtn.addEventListener("click",multi);
+
+
+            function add() {
+                let no1=Number(document.getElementById("no1").value);
+                let no2=Number(document.getElementById("no2").value);
+                let final=no1+no2;
+                para.textContent = `${no1} plus ${no2} equals ${final}`;
+                alert(`${no1} plus ${no2} equals ${final}`);
+            }
+
+            function multi() {
+                let no1=Number(document.getElementById("no1").value);
+                let no2=Number(document.getElementById("no2").value);
+                let final=no1*no2;
+                alert(`${no1} times ${no2} equals ${final}`);
+            }
+        </script>
+    </body> 
+</html>

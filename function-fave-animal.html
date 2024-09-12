@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Javascript testing</title>
+    </head>
+
+    <body>
+        <h1 id="questionHeader">What is your favourite animal?</h1>
+        <input type="text" id="myHtmlInput">
+        <button id="htmlBtn">Click to confirm</button>
+        <p id="demo">
+            
+        <script>
+            const jsBtn = document.getElementById("htmlBtn");
+            jsBtn.addEventListener("click",myFunction);
+
+            function myFunction() {
+                let jsInput = document.getElementById("myHtmlInput").value;
+                jsInput = jsInput.toLowerCase();
+                document.getElementById("demo").innerHTML= `Your favourite animal is a ${jsInput}.`;
+                switch(jsInput) {
+                    case 'dog': alert(`OMG I love ${jsInput}s too!`);
+                    break;
+                    case 'cat': alert(`${jsInput}s are cool`);
+                    break;
+                    default: alert (`I have no opinion about ${jsInput}s, except I'm glad they make you happy`)
+                    }
+            } 
+        </script> 
+
+
+
+</html>
