@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Functions: Task 1</title>
+    <style>
+      .dynamic {
+        color: purple;
+        margin: 0.5em 0;
+        font-weight: bold;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+<div>
+    <a href="index.html">Back to all projects</a>
+</div>
+<p>Refresh the page to generate a random name below:</p>
+
+    </section>
+
+  </body>
+  <script>
+    const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
+    const para = document.createElement('p');
+
+    // Add your code here
+
+function chooseName() { 
+    para.textContent = 
+    names[Math.floor(Math.random()*names.length)];
+}
+
+chooseName();
+para.setAttribute("class","dynamic");
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    section.appendChild(para);
+  </script>
+
+  <p>Solution to <cite>MDN's <a href = https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Test_your_skills:_Functions">Functions 1 exercise</a></cite>.</p>
+
+</html>
