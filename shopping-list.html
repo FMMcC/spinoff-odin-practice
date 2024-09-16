@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+    const list = document.querySelector("ul");
+    const input = document.querySelector("input");
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", clicked);
+    function clicked (){
+        inputValue = input.value;
+        input.value = "";
+        const list1 = document.createElement("li");
+        const span1 = document.createElement("span");
+        const btn1 = document.createElement("button");
+        list1.appendChild(span1);
+        list1.appendChild(btn1);
+        span1.textContent = inputValue;
+        btn1.textContent= "Delete";
+        list.appendChild(list1);
+        btn1.addEventListener("click", () =>
+            list.removeChild(list1));
+        input.focus()
+    }
+    </script>
+    <p>From <cite><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents#active_learning_basic_dom_manipulation">MDN's Manipulating Documents tutorial</a>.</cite></p>
+</body>
+</html>
