@@ -4,18 +4,18 @@
     <meta charset="utf-8"/>
     <title>Draw a rectangle</title>
     <style>
-        body{
+/*         body{
             min-width: 100vw;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             padding: 1vh 1vw;
             margin: 0;
-        }
+        } */
         .entry{
             display:flex;
             justify-content: space-between;
-                        width: 480px;
+            width: 480px;
             gap: 10px;
             margin-bottom: 10px;
         }
@@ -28,53 +28,56 @@
             font-weight: bold;
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
         canvas {
             margin-top: 1vh;
             border: 1px solid black;
         }
     </style>
-<!--     <link rel="stylesheet" href="../styles.css" /> -->
+        <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
 
-<main>
-    <div class ="userBits">
-        <div class="entry">
-            <label for="x">start from (x axis)</label>
-            <input type="text" id="x">
+<div class="content">
+    <a href="index.html">Back to all projects</a>
+    <h1>Draw a rectangle</h1>
+    <main>
+        <div class ="userBits">
+            <div class="entry">
+                <label for="x">start from (x axis)</label>
+                <input type="text" id="x">
+            </div>
+            <div class="entry">
+                <label for="y">start from (y axis)</label>
+                <input type="text" id="y">
+            </div>
+            <div class="entry">
+                <label for="width">width</label>
+                <input type="text" id="width">
+            </div>
+            <div class="entry">
+                <label for="height">height</label>
+                <input type="text" id="height">
+            </div>
+            <div class="entry">
+                <label for="color">pick a colour</label>
+                <input type="color" id="color">
+            </div>
+            <div>
+                <button>Draw!</button>
+            </div>
+        
         </div>
-        <div class="entry">
-            <label for="y">start from (y axis)</label>
-            <input type="text" id="y">
-        </div>
-        <div class="entry">
-            <label for="width">width</label>
-            <input type="text" id="width">
-        </div>
-        <div class="entry">
-            <label for="height">height</label>
-            <input type="text" id="height">
-        </div>
-        <div class="entry">
-            <label for="color">pick a colour</label>
-            <input type="color" id="color">
-        </div>
-        <div>
-            <button>Draw!</button>
-        </div>
+
+        <canvas width="480" height="320">
+
+        </canvas>
+    </main>
+</div>
+
+    <div class="footer">
+        <p>My solution to MDN's <cite><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Test_your_skills:_Functions">Functions 2 exercise</a></cite> (plus, to be honest, a lot more faffing than was necessary).</p>
     </div>
-
-    <canvas width="480" height="320">
-
-    </canvas>
-</main>
-
-    <p>My solution to MDN's <cite><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Test_your_skills:_Functions">Functions 2 exercise</a></cite> (plus, to be honest, a lot more faffing than was necessary).</p>
 
   </body>
   <script>
