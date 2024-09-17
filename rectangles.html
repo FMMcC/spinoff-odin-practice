@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Draw a rectangle</title>
+    <style>
+        body{
+            min-width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 1vh 1vw;
+            margin: 0;
+        }
+        .entry{
+            display:flex;
+            justify-content: space-between;
+                        width: 480px;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        button{
+            background-color: aquamarine;
+            font-weight: bold;
+        }
+        .error{
+            color: red;
+            font-weight: bold;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        canvas {
+            margin-top: 1vh;
+            border: 1px solid black;
+        }
+    </style>
+<!--     <link rel="stylesheet" href="../styles.css" /> -->
+  </head>
+
+  <body>
+
+<main>
+    <div class ="userBits">
+        <div class="entry">
+            <label for="x">start from (x axis)</label>
+            <input type="text" id="x">
+        </div>
+        <div class="entry">
+            <label for="y">start from (y axis)</label>
+            <input type="text" id="y">
+        </div>
+        <div class="entry">
+            <label for="width">width</label>
+            <input type="text" id="width">
+        </div>
+        <div class="entry">
+            <label for="height">height</label>
+            <input type="text" id="height">
+        </div>
+        <div class="entry">
+            <label for="color">pick a colour</label>
+            <input type="color" id="color">
+        </div>
+        <div>
+            <button>Draw!</button>
+        </div>
+    </div>
+
+    <canvas width="480" height="320">
+
+    </canvas>
+</main>
+
+    <p>My solution to MDN's <cite><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Test_your_skills:_Functions">Functions 2 exercise</a></cite> (plus, to be honest, a lot more faffing than was necessary).</p>
+
+  </body>
+  <script>
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+    const para = document.createElement('p');
+    const main = document.querySelector('main');
+    const entry = document.querySelector('.userBits');
+   
+
+    // Add your code here
+    const btn = document.querySelector('button');
+    btn.addEventListener("click", () => {
+        const x = Number(document.querySelector("#x").value);
+        const y = Number(document.querySelector("#y").value);
+        const width = Number(document.querySelector("#width").value);
+        const height = Number(document.querySelector("#height").value);
+        const color = document.querySelector("#color").value;
+        if(isNaN(x+y+width+height)){
+            para.textContent=`Error: please enter a number in each box`;
+            para.setAttribute('class', 'error');
+            entry.appendChild(para);
+
+        } else if(width == 0 || height ==0){
+            para.textContent=`Error: please enter dimensions for the rectangle`;
+            para.setAttribute('class', 'error');
+            entry.appendChild(para);
+
+        } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, width, height);
+            para.textContent=`You've drawn a rectangle with a width of ${width} and height of ${height}`;
+            main.appendChild(para);
+        }
+    })
+
+    
+    // Don't edit the code below here!
+
+/*     const section = document.querySelector('section'); */
+  </script>
+
+</html>
