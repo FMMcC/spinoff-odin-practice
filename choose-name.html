@@ -34,17 +34,34 @@
   <script>
     const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
     const para = document.createElement('p');
+    const main = document.querySelector('main');
 
+    //Functions 3 (refactor) start
+
+    function random(min, max){
+      return Math.floor(Math.random()*max)+min;
+    }
+
+    function chooseName() {
+      para.textContent = names[random(0,names.length)];
+      para.setAttribute("class","dynamic");
+      main.appendChild(para);
+    }
+    chooseName();
+    //Functions 3 end
+
+    /*
+    //original Functions 1 - this worked!
     function chooseName() {
       para.textContent = names[Math.floor(Math.random()*names.length)];
     }
 
-    chooseName();
-    para.setAttribute("class","dynamic");
+    chooseName(); */
+/*     para.setAttribute("class","dynamic");
     
     const main = document.querySelector('main');
 
-    main.appendChild(para);
+    main.appendChild(para) */;
   </script>
 
 
